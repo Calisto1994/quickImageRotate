@@ -6,8 +6,8 @@
     $pattern = array("*.[Jj][Pp][Gg]", "*.[Jj][Pp][Ee][Gg]"); // pattern (or multiple patterns) of the files you want to rotate
     // Instead of using an array, you may also just use this: $pattern = "*.jpg"; –– if you just need a single pattern.
     $degrees = 0; // how many degrees should the files become rotated?
-    $quality = 100; // desired quality level of the output images
-    $startPath = "./rwby2/"; // default: the scripts very own directory ("./"), but can be set to any other.
+    $quality = 96; // desired quality level of the output images
+    $startPath = "./rwby/"; // default: the scripts very own directory ("./"), but can be set to any other.
 
     echo("Rotating images...\n");
 
@@ -33,7 +33,7 @@
     }
 
     function rotateAllJPEG ($path, $glob) {
-        global $degrees, $rotateAll;
+        global $degrees, $rotateAll, $quality;
         $number = 0;
 
         foreach (glob($path.$glob) as $filename) {
