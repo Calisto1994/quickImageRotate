@@ -2,10 +2,10 @@
     error_reporting(E_ALL);
 
     $rotateAll = 0; // 0: Rotate all images; 1: Rotate only even images; 2: Rotate only odd images;
-    $pattern = array("*.[Jj][Pp][Gg]"); // pattern (or multiple patterns) of the files you want to rotate
+    $pattern = array("*.[Jj][Pp]*[Gg]"); // pattern (or multiple patterns) of the files you want to rotate
     // Instead of using an array, you may also just use this: $pattern = "*.jpg"; –– if you just need a single pattern.
     $degrees = 180; // how many degrees should the files become rotated?
-    $startPath = "./1927/"; // default: the scripts very own directory ("./"), but can be set to any other.
+    $startPath = "./images/"; // default: the scripts very own directory ("./"), but can be set to any other.
 
     echo("Rotating images...\n");
 
@@ -39,14 +39,14 @@
             $transparency = imagecolorallocatealpha($image, 0, 0, 0, 127);
             // Transparency might be required if you're rotating not in 90-degrees steps but e.g. 45 degrees
             $number++;
-            if ($number % 2 == 0) {
+            if ($number % 2 == 0) { // Is it even?
                 if ($rotateAll == 0 || $rotateAll == 1) { // all, or only even images
                     $image = imagerotate($image, $degrees, $transparency); // rotate the image
                     echo("     ${filename} is being rotated...\n");
                 } else {
                     echo("     ${filename} is NOT being rotated...\n");
                 }
-            } else {
+            } else { // or is it odd?
                 if ($rotateAll == 0 || $rotateAll == 2) { // all, or only odd images
                     $image = imagerotate($image, $degrees, $transparency); // rotate the image
                     echo("     ${filename} is being rotated...\n");
