@@ -22,7 +22,7 @@
             foreach ($pattern as $glob)
                 rotateAllJPEG($path, $glob);    // rotate them all.
         } else
-            rotateAllJPEG($path, "*.jpg");
+            rotateAllJPEG($path, $pattern);
 
         foreach (glob("${path}*/") as $dirname) {
             _readDir($dirname); // join into sub-directories and repeat what we're doing here;
