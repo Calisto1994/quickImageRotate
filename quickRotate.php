@@ -2,7 +2,7 @@
 
     error_reporting(E_ALL);
 
-    $rotateAll = 1; // 0: Rotate all images; 1: Rotate only even images; 2: Rotate only odd images;
+    $rotateAll = 0; // 0: Rotate all images; 1: Rotate only even images; 2: Rotate only odd images;
     $pattern = array("*.[Jj][Pp][Gg]", "*.[Jj][Pp][Ee][Gg]"); // pattern (or multiple patterns) of the files you want to rotate
     // Instead of using an array, you may also just use this: $pattern = "*.jpg"; –– if you just need a single pattern.
     $degrees = 180; // how many degrees should the files become rotated?
