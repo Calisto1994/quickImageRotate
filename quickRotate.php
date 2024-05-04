@@ -2,6 +2,7 @@
     error_reporting(E_ALL);
 
     $pattern = array("*.jpg"); // pattern (or multiple patterns) of the files you want to rotate
+    // Instead of using an array, you may also just use this: $pattern = "*.jpg"; –– if you just need a single pattern.
     $degrees = 180; // how many degrees should the files become rotated?
     $startPath = "./"; // default: the scripts very own directory ("./"), but can be set to any other.
 
