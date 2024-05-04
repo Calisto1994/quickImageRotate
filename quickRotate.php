@@ -5,8 +5,9 @@
     $rotateAll = 0; // 0: Rotate all images; 1: Rotate only even images; 2: Rotate only odd images;
     $pattern = array("*.[Jj][Pp][Gg]", "*.[Jj][Pp][Ee][Gg]"); // pattern (or multiple patterns) of the files you want to rotate
     // Instead of using an array, you may also just use this: $pattern = "*.jpg"; –– if you just need a single pattern.
-    $degrees = 180; // how many degrees should the files become rotated?
-    $startPath = "./1927/"; // default: the scripts very own directory ("./"), but can be set to any other.
+    $degrees = 0; // how many degrees should the files become rotated?
+    $quality = 100; // desired quality level of the output images
+    $startPath = "./rwby2/"; // default: the scripts very own directory ("./"), but can be set to any other.
 
     echo("Rotating images...\n");
 
@@ -56,7 +57,7 @@
                 }
             }
 
-            imagejpeg($image, $filename, 100); // write image back to the file
+            imagejpeg($image, $filename, $quality); // write image back to the file
             unset($image); // free memory by deleting the variable
         }
     }
